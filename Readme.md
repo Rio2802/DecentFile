@@ -1,67 +1,140 @@
-BlockChain-Based Document Storing with IPFS
+📄 Blockchain-Based Document Storage with IPFS
 
-Overview
+A secure, decentralized, and tamper-proof system for storing and verifying documents using Blockchain and IPFS (InterPlanetary File System).
+This project ensures document integrity by storing files on IPFS and recording their immutable hashes on the blockchain.
 
-This project aims to create a secure and decentralized system for document storage using Blockchain and InterPlanetary File System (IPFS) technologies. The system stores the hash of documents on the Blockchain network and the documents themselves on the IPFS network. This ensures that documents cannot be tampered with or altered, while allowing easy retrieval and verification by authorized parties.
+✅ Overview
 
-Features
+This system provides a reliable approach for storing sensitive documents in a decentralized environment.
+Instead of storing documents directly on the blockchain (which is expensive and inefficient), files are uploaded to IPFS, and only the file hash is saved on the blockchain.
 
-Secure Document Storage: Ensures integrity and security using Blockchain and IPFS.
+This ensures:
 
-Decentralized Architecture: Eliminates central authority and single points of failure.
+🔐 Integrity — A document cannot be modified without changing its hash.
 
-Fast and Easy Retrieval: Allows seamless document retrieval and verification.
+🌍 Decentralization — No single point of failure.
 
-User-Friendly Interface: Provides a simple UI for document upload and retrieval.
+⚡ Fast Retrieval — Documents load quickly from the distributed IPFS network.
 
-Support for Multiple Document Formats: Enables storing various file types.
+✅ Trustless Verification — Anyone can verify authenticity without needing permission.
 
-Requirements
+✨ Features
 
-Node.js and npm installed on your system
+🔒 Secure Document Storage using IPFS + Blockchain
 
-MetaMask Wallet
+🌐 Fully Decentralized Architecture
 
-IPFS API (key and secret), which can be obtained from Infura
+⚡ Fast Document Upload/Retrieval
 
-Installation
+🧩 Supports Multiple File Formats
 
-Install the required packages:
+👨‍💻 User-Friendly Web Interface
 
+✅ Automatic Hash Recording on Blockchain
+
+📦 Requirements
+
+Before running the project, ensure you have:
+
+Node.js & npm
+
+MetaMask Wallet (browser extension)
+
+IPFS API credentials
+→ You can generate them from Infura or Pinata
+
+Smart contract deployed using Remix IDE
+
+🛠️ Installation & Setup
+1️⃣ Install dependencies
 npm install
 
-Deploy the contract.sol using Remix Online IDE.
+2️⃣ Deploy Smart Contract
 
-After deployment, copy the contract address from Remix.
+Open Remix IDE
 
-Paste it into the app.js contract address field.
+Load and deploy contract.sol
 
-Specify the network URL and network explorer URL (available in MetaMask network settings).
+Copy the deployed contract address
 
-Open the application in your browser using a Live Server Extension.
+3️⃣ Configure the Frontend
 
-To store and retrieve documents, create a new Infura account at Infura, then use the provided API key and secret. Paste them in the uploadToInfura function in app.js.
+Paste the contract address into app.js
 
-Usage
+Configure:
 
-Add an Exporter:
+Network RPC URL
 
-Click on the "Add Exporter" button and enter the exporter's MetaMask address.
+Network Explorer URL
+(Available in MetaMask custom network settings)
 
-Upload a Document:
+4️⃣ Add IPFS Credentials
 
-Click on the "Upload Document" button and select a file from your computer.
+Inside uploadToInfura function in app.js, paste your:
 
-The document will be encrypted and stored in the IPFS network.
+IPFS API Key
 
-Its hash will be recorded on the Blockchain.
+IPFS API Secret
 
-Retrieve a Document:
+5️⃣ Run the Application
 
-Click on the "Retrieve Document" button.
+Use Live Server:
 
-Enter the document's hash.
+Right-click index.html → "Open with Live Server"
 
-The system will fetch the document from IPFS and display it.
 
-License
+Your DApp is now running locally!
+
+🚀 Usage Guide
+✅ Add an Exporter
+
+Click Add Exporter
+
+Enter the MetaMask address of the exporter
+
+✅ Upload a Document
+
+Click Upload Document
+
+Select any file
+
+The file is:
+
+Uploaded to IPFS
+
+Returned with a unique IPFS hash
+
+Hash is stored on the Blockchain
+
+✅ Retrieve a Document
+
+Click Retrieve Document
+
+Enter the document’s hash
+
+The file is automatically fetched from IPFS and displayed
+
+📁 Project Architecture
+Frontend (HTML/JS)
+     │
+     ├── Interacts with MetaMask
+     ├── Uploads files → IPFS (Infura)
+     │
+Smart Contract (Solidity)
+     │
+     └── Stores IPFS Hashes on Blockchain
+
+🛡️ Security Benefits
+
+✅ Tamper-proof document storage
+
+✅ No central authority
+
+✅ Verifiable document integrity
+
+✅ Resistant to server failures
+
+📜 License
+
+This project is licensed.
+Feel free to use, modify, and enhance.
